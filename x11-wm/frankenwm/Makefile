@@ -16,7 +16,9 @@ GH_TAGNAME=		v1.0.23
 
 BUILD_DEPENDS=	xcb-util-keysyms>0:x11/xcb-util-keysyms \
 				xcb-util-wm>0:x11/xcb-util-wm
-LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms \
+LIB_DEPENDS=	libxcb-emwh.so:x11/xcb-util-wm \
+				libxcb-icccm.so:x11/xcb-util-wm \
+				libxcb-keysyms.so:x11/xcb-util-keysyms \
 				libxcb-util.so:x11/xcb-util
 
 USES=			gmake pkgconfig xorg
