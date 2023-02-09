@@ -1,0 +1,3 @@
+FrankenWM is a fast slim dynamic tiling window manager for X11. It was at one point based on monsterwm but has since gone under significant changes. Like dwm, it is configurable by editing config.h before compiling.
+
+It features a plethora of layouts OOTB: b-stack, dualstack, equal, fibonacci, grid, monocle, v-stack
