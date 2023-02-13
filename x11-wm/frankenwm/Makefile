@@ -23,8 +23,9 @@ LIB_DEPENDS=	libxcb-ewmh.so:x11/xcb-util-wm \
 
 USES=			gmake pkgconfig xorg
 USE_XORG=		x11 xcb
+MAKE_ARGS=		MANPREFIX="${PREFIX}/man"
 
 PLIST_FILES=	bin/frankenwm \
-				share/man/man1/frankenwm.1.gz
+				man/man1/frankenwm.1.gz
 
 .include <bsd.port.mk>
