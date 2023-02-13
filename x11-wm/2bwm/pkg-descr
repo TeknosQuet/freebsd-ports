@@ -1,0 +1,1 @@
+2bwm is a fast floating window manager written over the XCB library. It is derived from mcwm. Unlike other window managers, it uses two borders around all windows; hence the name. You can use the keyboard to control 2bwm although you can also use the cursor for functions like moving, resizing, and raising/lowering windows.
