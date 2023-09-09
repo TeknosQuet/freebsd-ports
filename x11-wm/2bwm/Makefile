@@ -2,7 +2,7 @@ PORTNAME=		2bwm
 DISTVERSION=	0.3
 CATEGORIES=		x11-wm
 
-MAINTAINER=		TeknosQuet
+MAINTAINER=		teknosquet@danwin1210.de
 COMMENT=		Fast floating WM derived from mcwm
 WWW=			https://github.com/venam/2bwm
 

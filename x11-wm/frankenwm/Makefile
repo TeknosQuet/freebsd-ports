@@ -2,7 +2,7 @@ PORTNAME=		frankenwm
 DISTVERSION=	1.0.23
 CATEGORIES=		x11-wm
 
-MAINTAINER=		TeknosQuet
+MAINTAINER=		teknosquet@danwin1210.de
 COMMENT=		Fast dynamic tiling X11 window manager
 WWW=			https://github.com/sulami/FrankenWM
 
