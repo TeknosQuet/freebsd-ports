@@ -13,7 +13,7 @@ Here's how you do it:
 ```sh
 $ git clone https://github.com/TeknosQuet/freebsd-ports.git
 $ cd freebsd-ports/category/port    # cd freebsd-ports/emulators/wine8
-$ make
+$ make    # root permissions required for downloading distfiles for the first time
 $ sudo make install
 ```
 
