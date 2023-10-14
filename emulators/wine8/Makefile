@@ -24,7 +24,7 @@ USE_SDL=	sdl2
 
 CPE_VENDOR=	winehq
 
-CONFLICTS_INSTALL=	wine wine[0-9] wine-devel
+CONFLICTS_INSTALL=	wine wine[0-9] wine-devel wine[0-9]-devel
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-kerberos \
