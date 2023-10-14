@@ -1,0 +1,15 @@
+Wine is a compatibility layer for running Microsoft Windows programs (that is,
+Win32) under Unix and Unix-like operating systems such as FreeBSD, macOS, and
+Linux. In specific, it translates NT syscalls into native Unix-like equivalents
+on-the-fly. It's capable of running many Windows applications with no issues.
+
+This port builds Wine 8.18 (development release) and has fixes for it to function
+correctly on FreeBSD; I used emulators/wine-devel as a sort of reference to
+make modifications and create this port. This serves as an alternative to the
+current emulators/wine, emulators/wine7, and emulators/wine-devel ports to
+serve as a more recent AND working version of Wine.
+
+Note: Although it is possible to make a build using the experimental WoW64
+      implementation, it is currently broken.
+
+<teknosquet@danwin1210.de>
