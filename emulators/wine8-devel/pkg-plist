@@ -257,10 +257,12 @@ include/wine/windows/d3d10_1.h
 include/wine/windows/d3d10_1.idl
 include/wine/windows/d3d10_1shader.h
 include/wine/windows/d3d10effect.h
+include/wine/windows/d3d10effect.idl
 include/wine/windows/d3d10misc.h
 include/wine/windows/d3d10sdklayers.h
 include/wine/windows/d3d10sdklayers.idl
 include/wine/windows/d3d10shader.h
+include/wine/windows/d3d10shader.idl
 include/wine/windows/d3d11.h
 include/wine/windows/d3d11.idl
 include/wine/windows/d3d11_1.h
@@ -1863,6 +1865,7 @@ lib/wine/%%WINEARCH%%-unix/msscript.ocx.so
 lib/wine/%%WINEARCH%%-unix/mssign32.dll.so
 lib/wine/%%WINEARCH%%-unix/mssip32.dll.so
 lib/wine/%%WINEARCH%%-unix/mstask.dll.so
+lib/wine/%%WINEARCH%%-unix/msttsengine.dll.so
 lib/wine/%%WINEARCH%%-unix/msv1_0.dll.so
 lib/wine/%%WINEARCH%%-unix/msv1_0.so
 lib/wine/%%WINEARCH%%-unix/msvcirt.dll.so
@@ -2084,7 +2087,7 @@ lib/wine/%%WINEARCH%%-unix/vcomp120.dll.so
 lib/wine/%%WINEARCH%%-unix/vcomp140.dll.so
 lib/wine/%%WINEARCH%%-unix/vcomp90.dll.so
 lib/wine/%%WINEARCH%%-unix/vcruntime140.dll.so
-lib/wine/%%WINEARCH%%-unix/vcruntime140_1.dll.so
+%%WINE64%%lib/wine/%%WINEARCH%%-unix/vcruntime140_1.dll.so
 lib/wine/%%WINEARCH%%-unix/vdmdbg.dll.so
 lib/wine/%%WINEARCH%%-unix/version.dll.so
 lib/wine/%%WINEARCH%%-unix/vga.dll.so
@@ -2602,6 +2605,7 @@ lib/wine/%%WINEARCH%%-windows/msscript.ocx
 lib/wine/%%WINEARCH%%-windows/mssign32.dll
 lib/wine/%%WINEARCH%%-windows/mssip32.dll
 lib/wine/%%WINEARCH%%-windows/mstask.dll
+lib/wine/%%WINEARCH%%-windows/msttsengine.dll
 lib/wine/%%WINEARCH%%-windows/msv1_0.dll
 lib/wine/%%WINEARCH%%-windows/msvcirt.dll
 lib/wine/%%WINEARCH%%-windows/msvcm80.dll
@@ -2844,7 +2848,7 @@ lib/wine/%%WINEARCH%%-windows/vcomp120.dll
 lib/wine/%%WINEARCH%%-windows/vcomp140.dll
 lib/wine/%%WINEARCH%%-windows/vcomp90.dll
 lib/wine/%%WINEARCH%%-windows/vcruntime140.dll
-lib/wine/%%WINEARCH%%-windows/vcruntime140_1.dll
+%%WINE64%%lib/wine/%%WINEARCH%%-windows/vcruntime140_1.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/vdhcp.vxd
 lib/wine/%%WINEARCH%%-windows/vdmdbg.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/ver.dll16

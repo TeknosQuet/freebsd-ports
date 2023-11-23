@@ -1,6 +1,6 @@
---- dlls/ntdll/unix/loader.c.orig	2023-10-13 06:53:37 UTC
+--- dlls/ntdll/unix/loader.c.orig	2023-11-10 20:54:48 UTC
 +++ dlls/ntdll/unix/loader.c
-@@ -375,10 +375,10 @@ static const BOOL use_preloader = TRUE;
+@@ -375,10 +375,10 @@ static const BOOL use_preloader = FALSE;
  static const BOOL use_preloader = FALSE;
  #endif
  
@@ -12,7 +12,7 @@
  static SIZE_T dll_path_maxlen;
  
  const char *home_dir = NULL;
-@@ -635,10 +635,8 @@ static void set_config_dir(void)
+@@ -634,10 +634,8 @@ static void init_paths( char *argv[] )
  static void init_paths( char *argv[] )
  {
      Dl_info info;
@@ -24,12 +24,7 @@
  
      if (!dladdr( init_paths, &info ) || !(ntdll_dir = realpath_dirname( info.dli_fname )))
          fatal_error( "cannot get path to ntdll.so\n" );
-@@ -657,18 +655,13 @@ static void init_paths( char *argv[] )
-                 bin_dir = realpath_dirname( path );
-             free( path );
-         }
-+#else
-+	bin_dir = realpath_dirname( argv0 );
+@@ -659,13 +657,8 @@ static void init_paths( char *argv[] )
  #endif
          if (!bin_dir) bin_dir = build_path( dll_dir, DLL_TO_BINDIR );
          data_dir = build_path( bin_dir, BIN_TO_DATADIR );
@@ -37,15 +32,13 @@
      }
 -    else wineloader = build_path( build_path( build_dir, "loader" ), basename );
  
--    env = malloc( sizeof("WINELOADER=") + strlen(wineloader) );
--    strcpy( env, "WINELOADER=" );
--    strcat( env, wineloader );
+-    asprintf( &env, "WINELOADER=%s", wineloader );
 -    putenv( env );
 -
      set_dll_path();
      set_system_dll_path();
      set_home_dir();
-@@ -676,32 +669,6 @@ static void init_paths( char *argv[] )
+@@ -673,32 +666,6 @@ static void init_paths( char *argv[] )
  }
  
  
@@ -78,7 +71,7 @@
  static void preloader_exec( char **argv )
  {
      if (use_preloader)
-@@ -733,13 +700,36 @@ static void preloader_exec( char **argv )
+@@ -730,13 +697,36 @@ static void preloader_exec( char **argv )
  }
  
  /* exec the appropriate wine loader for the specified machine */
@@ -120,7 +113,7 @@
  }
  
  
-@@ -753,11 +743,41 @@ NTSTATUS exec_wineloader( char **argv, int socketfd, c
+@@ -750,11 +740,41 @@ NTSTATUS exec_wineloader( char **argv, int socketfd, c
      WORD machine = pe_info->machine;
      ULONGLONG res_start = pe_info->base;
      ULONGLONG res_end = pe_info->base + pe_info->map_size;
@@ -161,8 +154,8 @@
 +
      signal( SIGPIPE, SIG_DFL );
  
-     sprintf( socket_env, "WINESERVERSOCKET=%u", socketfd );
-@@ -767,7 +787,7 @@ NTSTATUS exec_wineloader( char **argv, int socketfd, c
+     snprintf( socket_env, sizeof(socket_env), "WINESERVERSOCKET=%u", socketfd );
+@@ -764,7 +784,7 @@ NTSTATUS exec_wineloader( char **argv, int socketfd, c
      putenv( preloader_reserve );
      putenv( socket_env );
  
@@ -171,7 +164,7 @@
  }
  
  
-@@ -2415,7 +2435,7 @@ void __wine_main( int argc, char *argv[], char *envp[]
+@@ -2319,7 +2339,7 @@ DECLSPEC_EXPORT void __wine_main( int argc, char *argv
  
              memcpy( new_argv + 1, argv, (argc + 1) * sizeof(*argv) );
              putenv( noexec );
