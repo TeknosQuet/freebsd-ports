@@ -1,0 +1,7 @@
+TIMESTAMP = 1718477658
+SHA256 (PrismLauncher-PrismLauncher-8.3_GH0.tar.gz) = 961f5a8040202c5cef03df616be3e4fe02738c2b50552aafcaff42c332794d0d
+SIZE (PrismLauncher-PrismLauncher-8.3_GH0.tar.gz) = 4393744
+SHA256 (gulrak-filesystem-2fc4b46_GH0.tar.gz) = 6584c045303f13ba354a2ff50ceaabf0242a8357fc537119b2e0a09da3d253eb
+SIZE (gulrak-filesystem-2fc4b46_GH0.tar.gz) = 211859
+SHA256 (PrismLauncher-libnbtplusplus-23b9551_GH0.tar.gz) = 141c036aeadbef6816b40d78efb561614b4717362c64e41997ff644f7e6249b0
+SIZE (PrismLauncher-libnbtplusplus-23b9551_GH0.tar.gz) = 48584
