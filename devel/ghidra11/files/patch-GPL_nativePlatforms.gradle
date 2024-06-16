@@ -1,0 +1,43 @@
+--- GPL/nativePlatforms.gradle.orig	2023-11-25 04:30:29 UTC
++++ GPL/nativePlatforms.gradle
+@@ -24,7 +24,9 @@ project.ext.PLATFORMS = [
+ 	[name: "linux_x86_64", os: "linux", arch: "x86_64"],
+ 	[name: "linux_arm_64", os: "linux", arch: "arm64"],
+ 	[name: "mac_x86_64", os: "osx", arch: "x86_64"],
+-	[name: "mac_arm_64", os: "osx", arch: "arm64"]
++	[name: "mac_arm_64", os: "osx", arch: "arm64"],
++	[name: "freebsd_x86_64", os: "freebsd", arch: "x86_64"],
++	[name: "freebsd_arm_64", os: "freebsd", arch: "arm64"]
+ ]
+ 
+ /*********************************************************************************
+@@ -51,6 +53,9 @@ ext.getCurrentPlatformName = {
+ 		case ~/Mac OS X.*/:
+ 			os = "mac"
+ 			break
++		case ~/FreeBSD.*/:
++			os = "freebsd"
++			break
+ 		default:
+ 			throw new GradleException("Unrecognized platform operating system: $os")
+ 	}
+@@ -84,7 +89,18 @@ ext.getCurrentPlatformName = {
+ 	return currentPlatformName
+ }
+ 
+-
++/*********************************************************************************
++ * Returns true if the given platform is freebsd.
++ *********************************************************************************/
++ext.isFreeBSD = { platform_name ->
++	return platform_name.startsWith("freebsd")
++}
++/*********************************************************************************
++ * Returns true if the current platform is freebsd.
++ *********************************************************************************/
++ext.isCurrentFreeBSD = {
++	return isFreeBSD(getCurrentPlatformName())
++}
+ /*********************************************************************************
+  * Returns true if the given platform is linux.
+  *********************************************************************************/

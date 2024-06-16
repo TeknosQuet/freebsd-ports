@@ -1,0 +1,10 @@
+--- gradle/support/ip.gradle.orig	2024-06-03 15:21:43 UTC
++++ gradle/support/ip.gradle
+@@ -135,6 +135,7 @@ def Map<String, List<String>> getIpForModule(Project p
+ 		exclude "**/data/build.xml" // language build file (generated for dev only)
+ 		exclude "**/.vs/**"
+ 		exclude "**/*.vcxproj.user"
++		exclude "**/*.orig" // related to freebsd port patching
+ 	}
+ 	tree.each { file ->
+ 			String ip = getIp(p.projectDir, file)

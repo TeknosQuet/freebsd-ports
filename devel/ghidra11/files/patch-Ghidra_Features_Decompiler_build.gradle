@@ -1,0 +1,46 @@
+--- Ghidra/Features/Decompiler/build.gradle.orig	2024-04-10 18:33:00 UTC
++++ Ghidra/Features/Decompiler/build.gradle
+@@ -149,8 +149,9 @@ task buildDecompilerHelpHtml(type: Exec) {
+ 
+ 	// Check the OS before executing command.
+ 	doFirst {
+-		if (!getCurrentPlatformName().startsWith("linux")) {
+-			throw new TaskExecutionException( it, new Exception("The '$it.name' task only works on Linux."))
++		if (!(getCurrentPlatformName().startsWith("linux"))
++		|| getCurrentPlatformName().startsWith("freebsd")) {
++			throw new TaskExecutionException( it, new Exception("The '$it.name' task only works on Linux and FreeBSD."))
+ 		}
+ 	}
+ 
+@@ -168,7 +169,8 @@ task buildDecompilerHelpPdf(type: Exec) {
+ task buildDecompilerHelpPdf(type: Exec) {
+ 	// Check the OS before enabling task.
+ 	if (!(org.gradle.internal.os.OperatingSystem.current().isLinux() 
+-		|| org.gradle.internal.os.OperatingSystem.current().isMacOsX())) {
++		|| org.gradle.internal.os.OperatingSystem.current().isMacOsX()
++		|| org.gradle.internal.os.OperatingSystem.current().getName().contains("FreeBSD"))) {
+ 			it.enabled = false
+ 	}
+ 
+@@ -239,7 +241,7 @@ task buildDecompilerDocumentationPdfs(type: Exec) {
+  */
+ task buildDecompilerDocumentationPdfs(type: Exec) {
+ 	// Check the OS before enabling task.
+-	if (!(isCurrentLinux() || isCurrentMac())) {
++	if (!(isCurrentLinux() || isCurrentMac() || isCurrentFreeBSD())) {
+ 		it.enabled = false
+ 	}
+ 
+@@ -367,9 +369,10 @@ task buildDecompilerDocumentationHtml(type: Exec) {
+ 		// Check the OS before executing command.
+ 		doFirst {
+ 			if ( !(org.gradle.internal.os.OperatingSystem.current().isLinux() 
+-				|| org.gradle.internal.os.OperatingSystem.current().isMacOsX())) {
++				|| org.gradle.internal.os.OperatingSystem.current().isMacOsX()
++				|| org.gradle.internal.os.OperatingSystem.current().getName().contains("FreeBSD"))) {
+ 				throw new TaskExecutionException( it,
+-					new Exception( "The '$it.name' task only works on Linux or Mac Os X" ))
++					new Exception( "The '$it.name' task only works on Linux, Mac Os X, and FreeBSD" ))
+ 			}
+ 		}
+ 

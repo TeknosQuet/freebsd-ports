@@ -1,0 +1,15 @@
+TIMESTAMP = 1717306515
+SHA256 (ghidra/AXMLPrinter2.jar) = 00ed038eb6abaf6ddec8d202a3ed7a81b521458f4cd459948115cfd02ff59d6d
+SIZE (ghidra/AXMLPrinter2.jar) = 24552
+SHA256 (ghidra/PyDev%206.3.1.zip) = 4d81fe9d8afe7665b8ea20844d3f5107f446742927c59973eade4f29809b0699
+SIZE (ghidra/PyDev%206.3.1.zip) = 24756333
+SHA256 (ghidra/cdt-8.6.0.zip) = 81b7d19d57c4a3009f4761699a72e8d642b5e1d9251d2bb98df438b1e28f8ba9
+SIZE (ghidra/cdt-8.6.0.zip) = 76639241
+SHA256 (ghidra/dex2jar-2.1.zip) = 7a9bdf843d43de4d1e94ec2e7b6f55825017b0c4a7ee39ff82660e2493a46f08
+SIZE (ghidra/dex2jar-2.1.zip) = 5641797
+SHA256 (ghidra/java-sarif-2.1-modified.jar) = 7f736566494756d271aa5e4b1af6c89dc50d074ab1c6374a47df822264226b01
+SIZE (ghidra/java-sarif-2.1-modified.jar) = 227352
+SHA256 (ghidra/yajsw-stable-13.09.zip) = 4dae732a535846ae5dfab753e82a4d5f93ad9a05a065e2172bb9774a1b15453a
+SIZE (ghidra/yajsw-stable-13.09.zip) = 28128407
+SHA256 (ghidra/NationalSecurityAgency-ghidra-11.0.3-Ghidra_11.0.3_build_GH0.tar.gz) = 9981fbf594a1155f7cc15adcd7f7adbdf7c143db918bdc4c7afd61a362456612
+SIZE (ghidra/NationalSecurityAgency-ghidra-11.0.3-Ghidra_11.0.3_build_GH0.tar.gz) = 68990077

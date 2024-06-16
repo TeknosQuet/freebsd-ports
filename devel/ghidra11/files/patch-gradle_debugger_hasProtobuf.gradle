@@ -1,0 +1,11 @@
+--- gradle/debugger/hasProtobuf.gradle.orig	2023-11-25 08:21:42 UTC
++++ gradle/debugger/hasProtobuf.gradle
+@@ -35,7 +35,7 @@ dependencies {
+ 	if (isCurrentWindows()) {
+ 		protocArtifact 'com.google.protobuf:protoc:3.21.8:windows-x86_64@exe'
+ 	}
+-	if (isCurrentLinux()) {
++	if (isCurrentLinux() || isCurrentFreeBSD()) {
+ 		if (platform.endsWith("x86_64")) {
+ 			protocArtifact 'com.google.protobuf:protoc:3.21.8:linux-x86_64@exe'
+ 		}

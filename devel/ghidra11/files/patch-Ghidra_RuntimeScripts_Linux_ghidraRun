@@ -1,0 +1,11 @@
+--- Ghidra/RuntimeScripts/Linux/ghidraRun.orig	2024-06-16 00:46:26 UTC
++++ Ghidra/RuntimeScripts/Linux/ghidraRun
+@@ -13,7 +13,7 @@ SCRIPT_FILE="$(readlink -f "$0" 2>/dev/null || readlin
+ # contains the link you are calling (which is the best we can do on macOS), and the "echo" is the 
+ # fallback, which doesn't attempt to do anything with links.
+ SCRIPT_FILE="$(readlink -f "$0" 2>/dev/null || readlink "$0" 2>/dev/null || echo "$0")"
+-SCRIPT_DIR="${SCRIPT_FILE%/*}"
++SCRIPT_DIR="/usr/local/share/ghidra"
+ 
+ # Launch Ghidra
+ "${SCRIPT_DIR}"/support/launch.sh bg jdk Ghidra "${MAXMEM}" "" ghidra.GhidraRun "$@"
